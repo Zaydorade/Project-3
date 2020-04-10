@@ -1,7 +1,7 @@
 # Project-3
 
-#### Project-3-repo, 4/1/20
-​
+#### Project-3-repo
+
 #### By Zayd Sarraj
 
 ## Link to Wireframe
