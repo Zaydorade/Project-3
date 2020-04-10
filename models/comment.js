@@ -7,12 +7,7 @@ const CommentSchema = new Schema({
         required: true 
     },
 
-    title: { 
-        type: String, 
-        required: true 
-    },
-
-    content: { 
+    comment: { 
         type: String, 
         required: true 
     },
