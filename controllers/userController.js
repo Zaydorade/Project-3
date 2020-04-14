@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 module.exports = {
 	findAll: (req, res) => {
-		db.Users
+		db.User
 			.find({})
 			.then((users) => {
 				res.json(users);
@@ -15,7 +15,7 @@ module.exports = {
 	},
 
 	createUser: (req,res) => {
-		db.Users
+		db.User
 		.create(req.body)
 		.then(user => res.json(user))
 		.catch(err => res.json(err))
