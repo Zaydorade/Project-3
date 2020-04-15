@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserAPI from './utils/UserAPI';
-import CreateNewUser from './components/createUser'
+import Profile from './components/Profile'
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      username: '',
-      password: '',
 			users: [],
 			posts: [],
 			comments: []
@@ -24,7 +22,7 @@ class App extends Component {
 			<div className="container">
 				<div>
 					<h1 className="text-center">Gamer's Social Network</h1>
-          <CreateNewUser />
+          <Profile users={this.state.users} />
 				</div>
 			</div>
 		);
@@ -47,8 +45,8 @@ class App extends Component {
 	getUsers = () => {
 		UserAPI.getUser()
 			.then((res) => {
+				console.log(res)
 				this.setState({ users: res.data });
-				this.getUsers();
 			})
 			.catch((err) => console.log(err));
 	};

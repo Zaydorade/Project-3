@@ -7,6 +7,8 @@ module.exports = {
 		db.User
 			.find({})
 			.then((users) => {
+				console.log("$$$$$$$$$$$$$$$$$$$$$$$");
+				console.log(users);
 				res.json(users);
 			})
 			.catch((err) => {

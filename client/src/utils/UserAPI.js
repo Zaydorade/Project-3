@@ -2,13 +2,13 @@ import axios from 'axios';
 
 export default {
 	getUser: () => {
-		return axios.get('/api/user');
+		return axios.get('/api/users');
     },
     createUser: data => {
-        return axios.User('/api/user/', data)
+        return axios.post('/api/users/', data)
     },
     deleteUser: data => {
-        return axios.User('/api/user/delete', data)
+        return axios.delete('/api/user/delete', data)
     }
 	
 };
