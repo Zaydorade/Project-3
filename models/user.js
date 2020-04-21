@@ -6,40 +6,48 @@ const UserSchema = new Schema({
         type: String,
         required: true 
     },
-
     password: { 
         type: String, 
         required: true 
     },
-
-    firstName: { 
-        type: String, 
-        required: true 
-    },
-
-    lastName: { 
-        type: String, 
-        required: true 
-    },
-
     accountAge: { 
         type: Date, 
         default: Date.now 
     },
+    avatar: {
+        type: String
+    },
+    location: {
+        type: String
+    },
+    micUser: {
+        type: Boolean
+    },
+    voiceRecord: {
+        type: String
+    },
+    steamID: {
+        type: Number
+    },
+    xboxgt: {
+        type: String
+    },
+    psn: {
+        type: String
+    },
+    riotID: {
+        type: String
+    },
+    style: {
+        type: String
+    },
+    favGenre: {
+        type: String
+    },
+    availability: {
+        type: Number
+    }
 
-    posts: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: "Post"
-        }
-      ],
-
-    comments: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: "Comment"
-        }
-      ]
 });
 
 const User = mongoose.model("User", UserSchema);

@@ -9,6 +9,8 @@ export default {
     },
     deleteUser: data => {
         return axios.delete('/api/user/delete', data)
+    },
+	updateSteam: data => {
+        return axios.post('./api/steam', data)
     }
-	
 };

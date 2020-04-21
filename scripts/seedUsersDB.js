@@ -2,20 +2,30 @@ const mongoose = require('mongoose');
 const db = require('../models');
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gsn');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gsn', {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+});
 
 const itemSeed = [
 	{
 		username: 'Zaydorade',
 		password: 'password1',
 		firstName: 'Zayd',
-        lastName: 'Sarraj'
+		lastName: 'Sarraj',
+		steamID: 76561198058770552
 	},
 	{
-		username: 'Zaydorade2',
-		password: 'password1',
-		firstName: 'Zayd1',
-        lastName: 'Sarraj1'
+		username: 'Batman',
+		password: 'password2',
+		firstName: 'Bruce',
+        lastName: 'Wayne'
+	},
+	{
+		username: 'Superman',
+		password: 'password3',
+		firstName: 'Clark',
+		lastName: 'Kent'
 	}
 ];
 
@@ -30,3 +40,4 @@ db.User
 		console.error(err);
 		process.exit(1);
 	});
+
