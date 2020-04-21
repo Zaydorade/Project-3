@@ -3,15 +3,10 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Row
 } from 'reactstrap';
-import BrowseBar from '../BrowseBar';
-import BrowseResults from '../BrowseResults';
 
-
-const Browse = (props) => {
+const BrowseResults = (props) => {
 
     return (
-        <div>
-        <BrowseBar />
         <Row>
             {props.users.map(user => (
                 <div className="col-lg-3 my-3">
@@ -26,8 +21,7 @@ const Browse = (props) => {
                 </div>
             ))}
         </Row>
-        </div>
-            );
+    );
 }
 
-export default Browse;
+export default BrowseResults;

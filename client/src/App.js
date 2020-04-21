@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import GsnNavbar from './components/GsnNavbar';
 import CreateUser from './components/SignUp';
 import SignIn from './components/SignIn';
+import Browse from './components/Browse';
 
 class App extends Component {
 	constructor(props) {
@@ -32,17 +33,12 @@ class App extends Component {
 					<CreateUser {...props} handleChange={this.onHandleChange} value={this.state} submitClick={this.createUser} />} />
 					<Route exact path='/login' render={(props) => 
 					<SignIn {...props} handleChange={this.onHandleChange} value={this.state} submitClick={this.updateSteam} />} />
+					<Route exact path='/browse' render={(props) => 
+					<Browse {...props} users={this.state.users}/>} />
 				</div>
 			</Router>
-		
 		);
 	}
-
-
-
-
-
-
 
 
 	//============================== Universal Functions ===================================

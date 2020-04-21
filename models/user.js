@@ -14,6 +14,12 @@ const UserSchema = new Schema({
         type: Date, 
         default: Date.now 
     },
+    bio: {
+        type: String
+    },
+    platforms: {
+        type: Array
+    },
     avatar: {
         type: String
     },
