@@ -1,7 +1,53 @@
+.footer {
+  position: relative;
+  bottom: 0;
+}
+
+body, .medpurp {
+  background-color: mediumslateblue;
+}
+
+.purple {
+  background-color: mediumslateblue;
+}
+
+.spacer {
+  padding-bottom: 40px
+}
+
+.cardHeight {
+  height: 90%
+}
+
+.textshadows {
+  text-shadow: 0px 0px 5px black;
+}
+
+.imageuploadsizer {
+  height: 300px;
+  width: 430px
+}
+
+.logo {
+  color: black;
+  font-weight: 750;
+}
+
+.logoshadow {
+  text-shadow: 0px 0px 10px white;
+}
+
 .App {
   text-align: center;
 }
 
+.tinywords {
+  font-size: 12px
+}
+
+.smallwords {
+  font-size: 14px
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -28,6 +74,8 @@
   color: #61dafb;
 }
 
+.navbar { padding-top: 0 !important; padding-bottom: 0 !important; }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,6 +83,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.tiny-tip {
+    font-size: 11px;
 }
 
 .big-profile {
@@ -45,5 +97,21 @@
 @media (max-width: 767.98px) {
   .big-profile {
     width: 100%;
+  }
+
+  .footer {
+    position: relative;
+    bottom: 0;
+    height: 40px
+  }
+
+  .navbar { 
+    padding-top: .25rem !important;
+    padding-bottom: .25rem !important; 
+  }
+
+  .imageuploadsizer {
+    height: 20rem;
+    width: 26rem
   }
 }

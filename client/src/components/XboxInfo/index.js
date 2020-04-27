@@ -1,19 +1,15 @@
 import React from 'react';
 import {
-  Card, CardBody, CardSubtitle, Button
+  CardBody, CardSubtitle, Button
 } from 'reactstrap';
 
 const XboxInfo = (props) => {
 
   return (
-    <div>
-          <Card>
-            <CardBody className="text-center bg-success">
-            <CardSubtitle>Xbox Gamertag: Zaydorade</CardSubtitle>
-            <Button>View Stats</Button>
-            </CardBody>
-          </Card>
-    </div>
+    <CardBody className="d-flex flex-column text-center bg-success text-light shadow border rounded my-1 mx-2">
+      <CardSubtitle className="mx-auto mt-auto">Xbox Live Gamertag: <b>{props.value.xboxgt}</b></CardSubtitle>
+      <Button className="mx-auto mt-1 mb-auto text-light border rounded" color="transparent">View Stats</Button>
+    </CardBody>
   );
 }
 

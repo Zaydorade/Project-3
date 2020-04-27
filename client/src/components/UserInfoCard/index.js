@@ -1,15 +1,15 @@
 import React from 'react';
 import {
-    Card, CardBody, CardSubtitle
+    CardBody, CardSubtitle
 } from 'reactstrap';
 
 const UserInfoCard = (props) => {
-
     return (
-        <CardBody className="text-center bg-secondary">
-            <CardSubtitle>Style: Competitive</CardSubtitle>
-            <CardSubtitle>Region: USA</CardSubtitle>
-            <CardSubtitle>Schedule: 10 hrs/wk</CardSubtitle>
+        <CardBody className="text-center bg-light border rounded shadow mb-2 mx-2">
+            <CardSubtitle>-Friendly mic clip-</CardSubtitle>
+            <CardSubtitle>Style: {props.value.style}</CardSubtitle>
+            <CardSubtitle>Region: {props.value.region}</CardSubtitle>
+            <CardSubtitle>Schedule: {props.value.availability}</CardSubtitle>
         </CardBody>
     );
 }

@@ -5,13 +5,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
 } from 'reactstrap';
 
 const GsnNavbar = (props) => {
@@ -19,36 +13,26 @@ const GsnNavbar = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+
   return (
-      <div>
-      <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">GSN</NavbarBrand>
+    <div>
+      <Navbar className="shadow" color="dark" dark expand="md">
+        <NavbarBrand className="logoshadow" href="/"><span className="logo">GameNation</span></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          {props.username ?
+            <Nav className="ml-auto text-center" navbar>
+              <NavLink className='text-light textshadows' href='/account'>{props.username}</NavLink>
+              <NavLink className='text-light textshadows' href='/login' onClick={() => props.logout()}>Logout</NavLink>
+            </Nav> :
+            <Nav className="ml-auto text-center" navbar>
+              <NavLink className='text-light textshadows' href='/login'>Login</NavLink>
+              <NavLink className='text-light textshadows' href='/signup'>Sign Up</NavLink>
+            </Nav> }
         </Collapse>
       </Navbar>
-      </div>
-    
+    </div>
+
   );
 }
 

@@ -1,19 +1,14 @@
 import React from 'react';
 import {
-  Card, CardBody, CardSubtitle, Button
+   CardBody, CardSubtitle
 } from 'reactstrap';
 
 const PsInfo = (props) => {
 
   return (
-    <div>
-          <Card>
-            <CardBody className="text-center bg-primary">
-            <CardSubtitle>PSN: Zaydorade</CardSubtitle>
-            <Button>View Stats</Button>
-            </CardBody>
-          </Card>
-    </div>
+    <CardBody className="d-flex align-items-center text-center text-light bg-primary border rounded shadow my-1 mx-2">
+      <CardSubtitle className="mx-auto">Playstation Network Name: <b>{props.value.psn}</b></CardSubtitle>
+    </CardBody>
   );
 }
 

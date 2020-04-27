@@ -17,17 +17,21 @@ const UserSchema = new Schema({
     bio: {
         type: String
     },
+    platform: {
+        type: String
+    },
     platforms: {
         type: Array
     },
     avatar: {
-        type: String
+        type: String,
+        default: "/images/profilepic.jpg"
     },
-    location: {
+    region: {
         type: String
     },
     micUser: {
-        type: Boolean
+        type: String
     },
     voiceRecord: {
         type: String
@@ -44,6 +48,12 @@ const UserSchema = new Schema({
     riotID: {
         type: String
     },
+    ninID: {
+        type: String
+    },
+    twitchID: {
+        type: String
+    },
     style: {
         type: String
     },
@@ -51,11 +61,14 @@ const UserSchema = new Schema({
         type: String
     },
     availability: {
-        type: Number
+        type: String
+    },
+    friends: {
+        type: Array
     }
 
 });
 
-const User = mongoose.model("User", UserSchema);
+const Users = mongoose.model("Users", UserSchema);
 
-module.exports = User;
+module.exports = Users;

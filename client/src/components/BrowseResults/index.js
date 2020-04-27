@@ -11,7 +11,7 @@ const BrowseResults = (props) => {
             {props.users.map(user => (
                 <div className="col-lg-3 my-3">
                 <Card className="mx-3 shadow">
-                    <CardImg top width="100%" src="/images/profilepic.jpg" alt="Profile Picture" />
+                    <CardImg top width="100%" src={user.avatar} alt="Profile Picture" />
                     <CardBody className="text-center">
                         <CardTitle>{user.username}</CardTitle>
                         <CardSubtitle>{user.platforms.join(", ")}</CardSubtitle>

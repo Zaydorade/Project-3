@@ -1,19 +1,28 @@
 import React from 'react';
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle
+  CardTitle, CardSubtitle,
 } from 'reactstrap';
+import UserInfoCard from '../UserInfoCard';
+
+
 const UserCard = (props) => {
+  console.log(props.value.platforms)
+
 
   return (
-          <Card className="mr-1 shadow">
-            <CardImg top width="100%" src="/images/profilepic.jpg" alt="Profile Picture" />
-            <CardBody className="text-center">
-              <CardTitle>Zaydorade</CardTitle>
-              <CardSubtitle>PC, Xbox</CardSubtitle>
-              <CardText>Best gamer around.</CardText>
-            </CardBody>
-          </Card>
+
+    <Card className="mx-1 mt-1 shadow">
+      <CardImg top className="border rounded shadow" width="100%" src={props.value.avatar} alt="Profile Picture" />
+      <CardBody className='text-center border rounded shadow my-2 mx-2'>
+        <CardTitle><b>{props.value.username}</b></CardTitle>
+        <CardSubtitle>-{props.value.platform}-
+        </CardSubtitle>
+        <CardText>{props.value.bio}</CardText>
+      </CardBody>
+      <UserInfoCard value={props.value}/>
+    </Card>
+
   );
 }
 

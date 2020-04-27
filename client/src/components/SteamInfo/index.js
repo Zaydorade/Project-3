@@ -1,19 +1,15 @@
 import React from 'react';
 import {
-  Card, CardBody, CardSubtitle, Button
+  CardBody, CardSubtitle, Button
 } from 'reactstrap';
 
 const SteamInfo = (props) => {
 
   return (
-    <div>
-          <Card className='text-light'>
-            <CardBody className="text-center bg-dark">
-            <CardSubtitle>SteamID: Zaydorade#4298</CardSubtitle>
-            <Button>View Stats</Button>
-            </CardBody>
-          </Card>
-    </div>
+    <CardBody className="d-flex flex-column text-center text-light bg-dark border rounded shadow mx-2 my-2">
+      <CardSubtitle className="mx-auto mt-auto">SteamID: <b>{props.value.steamID}</b></CardSubtitle>
+      <Button className="mb-auto mx-auto mt-1 text-light border rounded" color="transparent">View Details</Button>
+    </CardBody>
   );
 }
 
