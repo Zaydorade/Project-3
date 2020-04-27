@@ -8,27 +8,28 @@ import {
 const Friends = (props) => {
 
     return (
-            <div><Row className="border rounded border-light shadow mx-5 mt-2"><h1 className="logoshadow mx-auto">Friends</h1></Row>
-            <Row className="border rounded border-light mx-5 my-2 pb-2">
+        <div><Row className="border rounded bg-light shadow mx-5 mt-2"><h1 className="textshadow mx-auto">Friends</h1></Row>
+            <Row className="border shadow rounded bg-light mx-5 mt-3 pb-5">
                 {props.value.friends.map(user => {
-                    return <div key={user._id} className="col-lg-3 my-3">
-                        <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-3 cardHeight shadow">
+                    return <div key={user._id} className="col-lg-3 my-4">
+                        <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-5 cardHeight shadow">
                             <CardImg top className="border rounded shadow" width="100%" src={user.avatar} alt="Profile Picture" />
                             <CardBody className="d-flex flex-column text-center">
                                 <CardSubtitle className="mb-1 mt-auto"><b>{user.username}</b></CardSubtitle>
-                                <CardSubtitle className="smallwords">- {user.platforms.map(platform => {return <span>{platform} - </span>})}</CardSubtitle>
+                                <CardSubtitle className="smallwords">- {user.platforms.map(platform => { return <span key={platform + user._id}>{platform} - </span> })}</CardSubtitle>
                                 <CardText className="tinywords mb-auto">{user.bio}</CardText>
                             </CardBody>
                         </Card>
-                        <Container className="py-2 text-center">
+                        {window.location.href.match(/profile/) ? null :
+                        <Container className="my-2 text-center">
                             <Button key={'remove' + user._id} color="transparent" className="border border-dark rounded shadow textshadow"
                                 name={user.username} onClick={event => props.addFriend(event)}>Remove</Button>
-                        </Container>
+                        </Container>}
                     </div>
                 }
                 )}
             </Row>
-            </div>
+        </div>
     );
 }
 

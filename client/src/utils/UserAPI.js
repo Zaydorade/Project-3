@@ -16,8 +16,11 @@ export default {
     deleteUser: data => {
         return axios.post('/api/auth/delete', data)
     },
-	updateSteam: data => {
+	getSteam: data => {
         return axios.post('./api/steam', data)
+    },
+    updateSteamAvatar: () => {
+        return axios.get(`../api/steam/avatar`)
     },
     updateUser: data => {
         return axios.post(`./api/users/${data.username}`, data)

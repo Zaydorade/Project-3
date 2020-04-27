@@ -33,6 +33,11 @@ body, .medpurp {
   font-weight: 750;
 }
 
+.steamThumbnail {
+  height: 50%;
+  width: 20%
+}
+
 .logoshadow {
   text-shadow: 0px 0px 10px white;
 }
@@ -93,6 +98,15 @@ body, .medpurp {
   height: 46%;
   width: 46%;
 }
+
+
+@media (max-width: 994px) {
+  .cardHeight {
+    height: 97%
+  }
+  
+}
+
 
 @media (max-width: 767.98px) {
   .big-profile {

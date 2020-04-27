@@ -27,9 +27,11 @@ router.route('/user').get((req, res) => {
     }
     let check = req.isAuthenticated()
     let username = req.user.username
+    console.log(username)
     db.Users
         .findOne({ username: username })
         .then((user) => {
+            console.log(user)
             res.json(user);
         })
         .catch((err) => {
@@ -122,7 +124,6 @@ router.route('/:username')
             db.Users
                 .findOneAndUpdate({ username: req.user.username }, req.body, { useFindAndModify: false })
                 .then((user) => {
-                    console.log(`Update complete, ${user.username}`)
                     res.json(user)
                 })
                 .catch(err => res.json(err))

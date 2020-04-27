@@ -25,7 +25,7 @@ const itemSeed = [
 		style: 'Social',
 		region: 'Americas',
 		availability: '10 hrs/wk',
-		twitchID: 'Zaydorade',
+		ninID: 'Zaydorade',
 		favGenre: 'MMORPG',
 		favGames: ['The Outer Wilds', 'Elder Scrolls Online']
 
@@ -46,7 +46,7 @@ const itemSeed = [
 		style: 'Social',
 		region: 'Americas',
 		availability: '10 hrs/wk',
-		twitchID: 'Zaydorade',
+		ninID: 'Zaydorade',
 		favGenre: 'MMORPG',
 		favGames: ['The Outer Wilds', 'Elder Scrolls Online']
 	},
@@ -66,7 +66,7 @@ const itemSeed = [
 		style: 'Social',
 		region: 'Americas',
 		availability: '10 hrs/wk',
-		twitchID: 'Zaydorade',
+		ninID: 'Zaydorade',
 		favGenre: 'MMORPG',
 		favGames: ['The Outer Wilds', 'Elder Scrolls Online']
 	},
@@ -85,7 +85,7 @@ const itemSeed = [
 		style: 'Social',
 		region: 'Americas',
 		availability: '10 hrs/wk',
-		twitchID: 'Zaydorade',
+		ninID: 'Zaydorade',
 		favGenre: 'MMORPG',
 		favGames: ['The Outer Wilds', 'Elder Scrolls Online']
 	}

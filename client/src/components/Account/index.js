@@ -19,7 +19,7 @@ const Account = (props) => {
         <div>
           <CardGroup>
             <AccountUserCard value={props.value} handleChange={props.handleChange} handleMultiChange={props.handleMultiChange}
-              submitClick={props.updateUser} imageSelect={props.imageSelect} updateAvatar={props.updateAvatar} />
+              submitClick={props.updateUser} imageSelect={props.imageSelect} updateAvatar={props.updateAvatar} viewProfile={props.viewProfile} />
             <Card className="rounded mt-1 mx-1 shadow">
               <AccountSteamInfo value={props.value} handleChange={props.handleChange} updateSteam={props.updateSteam} />
               <AccountXboxInfo value={props.value} handleChange={props.handleChange} updateXbox={props.updateXbox} />
@@ -29,10 +29,14 @@ const Account = (props) => {
             </Card>
           </CardGroup>
           <Container fluid className="text-center">
-            <Button className="ml-1 mt-4" color="danger" onClick={event => props.submitDelete(event)}>Delete Your Account</Button>
-          </Container> 
-          <Friends value={props.value} viewProfile={props.viewProfile} addFriend={props.addFriend} />
-          </div> :
+            <Button className="ml-1 my-3" color="danger" onClick={event => props.submitDelete(event)}>Delete Your Account</Button>
+          </Container>
+          {props.value.friends.length > 0 ?
+            <Friends value={props.value} viewProfile={props.viewProfile} addFriend={props.addFriend} /> :
+            <Container className='text-center mx-auto py-2 my-3 border bg-light rounded shadow'>
+              <h1>No friends to display. Go add some!</h1>
+            </Container>}
+        </div> :
         <Container className='text-center mx-auto py-2 mt-5 border bg-light rounded shadow'>
           <h1>You must be logged in to do view this page</h1>
         </Container>}

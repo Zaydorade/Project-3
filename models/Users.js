@@ -37,7 +37,10 @@ const UserSchema = new Schema({
         type: String
     },
     steamID: {
-        type: Number
+        type: String
+    },
+    steamInfo: {
+        type: Object
     },
     xboxgt: {
         type: String
@@ -55,7 +58,8 @@ const UserSchema = new Schema({
         type: String
     },
     style: {
-        type: String
+        type: String,
+        default: 'Social'
     },
     favGenre: {
         type: String

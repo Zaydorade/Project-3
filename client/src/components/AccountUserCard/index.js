@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Modal, ModalHeader, ModalBody,
-  Form, FormGroup, Label, Input
+  Form, FormGroup, Label, Input, Row
 } from 'reactstrap';
 import AccountInfoCard from '../AccountInfoCard';
 import ImageUpload from '../ImageUpload'
@@ -102,7 +102,10 @@ const AccountUserCard = (props) => {
         </ModalBody>
       </Modal>
       <AccountInfoCard value={props.value} />
-      <Button className="mb-3 mt-1 mx-auto border rounded shadow" color="transparent" onClick={toggle}>Update your info</Button>
+      <Row>
+      <Button className="mb-3 mt-1 ml-auto mr-1 border rounded shadow" color="transparent" onClick={toggle}>Update your info</Button>
+      <Button className="mb-3 mt-1 mr-auto ml-1 border rounded shadow" color="transparent" onClick={() => props.viewProfile(props.value.username)}>View your Profile</Button>
+      </Row>
     </Card>
   );
 }

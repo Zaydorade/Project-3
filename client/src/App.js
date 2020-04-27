@@ -58,10 +58,11 @@ class App extends Component {
 			this.getUser()
 		}
 		else {
+			console.log('mounting')
 			this.getUser()
+			console.log('still mounting')
 			this.getUsers()
 		}
-		console.log(this.state)
 	}
 
 	render() {
@@ -74,7 +75,7 @@ class App extends Component {
 						<Browse {...props} value={this.state} handleDropdown={this.onHandleDropdown}
 							handleChange={this.onHandleChange} viewProfile={this.viewProfile} addFriend={this.addFriend} />} />
 					<Route path="/profile/" render={(props) =>
-						<Profile {...props} value={this.state} addFriend={this.addFriendfromProfile} />} />
+						<Profile {...props} value={this.state} addFriend={this.addFriendfromProfile} viewProfile={this.viewProfile} />} />
 					<Route exact path="/account" render={(props) =>
 						<Account {...props} handleChange={this.onHandleChange} updateAvatar={this.updateAvatar}
 							imageSelect={this.onImageSelect} value={this.state} updateUser={this.updateUser}
@@ -298,17 +299,16 @@ class App extends Component {
 
 
 	updateSteam = () => {
-		console.log(this.state)
 		const { steamID, username } = this.state
 		const object = {
 			username,
 			steamID
 		}
-		console.log(object)
 		UserAPI.updateUser(object)
 			.then((res) => {
 				console.log(res.data)
-				window.location.reload()
+				this.getSteamInfo()
+				// window.location.reload()
 			})
 			.catch((err) => console.log(err));
 	};
@@ -383,6 +383,29 @@ class App extends Component {
 				window.location.reload()
 			})
 			.catch((err) => console.log(err));
+	}
+
+	getSteamInfo = () => {
+		const { username, steamID } = this.state
+		const object = {
+			username,
+			steamID
+		}
+		UserAPI.getSteam(object)
+		.then((res) => {
+			console.log('Steam info Updated')
+			console.log(this.state)
+			console.log(res)
+			// this.updateSteamAvatar()
+			// console.log('steam avatar updated')
+		})
+		.catch(err => console.log(err))
+	}
+
+	updateSteamAvatar = () => {
+		UserAPI.updateSteamAvatar()
+		.then(res => console.log(res.data))
+		.catch(err => console.log(err))
 	}
 
 	addFriend = (event) => {
