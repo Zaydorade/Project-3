@@ -41,7 +41,6 @@ const CreateUser = (props) => {
           </FormGroup>
           <FormGroup>
               <Label for="platforms">Select your other Platforms:</Label>
-              <p className="tinywords muted">(CTRL+Click to select multiple)</p>
               <Input className="shadow-sm" type="select" name="platforms" multiple onChange={props.handleMultiChange}
                 value={props.value.platforms}>
                 <option>PC</option>
