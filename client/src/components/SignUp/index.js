@@ -84,7 +84,7 @@ const CreateUser = (props) => {
             <Label for="style">Gaming Style:</Label>
             <Input className="shadow-sm" type="select" name="style"
               onChange={props.handleChange}
-              value={props.value.region}>
+              value={props.value.style}>
               <option>Social</option>
               <option>Competitive</option>
               <option>Casual</option>
