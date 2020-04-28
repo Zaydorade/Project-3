@@ -23,7 +23,6 @@ router.route('/').post((req, res) => {
     let userSteamID = req.body.steamID
     let APIkey = 'BD54D1AE4184BBA8B7ECF21F6094F4CE'
     let steamAPIurl = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${APIkey}&steamids=${userSteamID}`
-    console.log(req.body.steamID)
     axios.get(steamAPIurl)
         .then((response) =>
             db.Users.updateOne({ username: req.body.username }, { steamInfo: response.data.response.players[0] })
