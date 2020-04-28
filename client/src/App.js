@@ -43,6 +43,7 @@ class App extends Component {
 			platformSearch: ["PC", "Xbox", "Playstation", "Nintendo Switch", "Mobile"],
 			styleSearch: ["Social", "Casual", "Competitive"],
 			file: null,
+			userLoggedIn: false
 		};
 	}
 
@@ -195,6 +196,9 @@ class App extends Component {
 		UserAPI.login(object)
 			.then((res) => {
 				console.log(res.data)
+				this.setState({
+					userLoggedIn: true
+				})
 				window.location = res.data.redirectURL
 			})
 			.catch((err) => console.log(err))
@@ -202,6 +206,14 @@ class App extends Component {
 
 	logout = () => {
 		UserAPI.logout()
+		.then(res => {
+			console.log("logged out");
+			this.setState({
+				userLoggedIn: false
+			})
+			window.location.reload()
+		})
+		.catch(err => console.log(err))
 	}
 
 	//create User Function
