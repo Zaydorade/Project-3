@@ -27,7 +27,7 @@ const Friends = (props) => {
                             </Container>
                         </div>
                     } else {
-                        <div key={user._id} className="col-lg-3 my-4">
+                       return <div key={user._id} className="col-lg-3 my-4">
                             <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-5 cardHeight shadow">
                                 <CardImg top className="border rounded shadow" width="100%" src={user.avatar} alt="Profile Picture" />
                                 <CardBody className="d-flex flex-column text-center">
