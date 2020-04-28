@@ -23,6 +23,7 @@ const GsnNavbar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           {props.username ?
             <Nav className="ml-auto text-center" navbar>
+              <NavLink className='text-light textshadows' href='/'>Find Gamers</NavLink>
               <NavLink className='text-light textshadows' href='/account'>{props.username}</NavLink>
               <NavLink className='text-light textshadows' href='/login' onClick={() => props.logout()}>Logout</NavLink>
             </Nav> :

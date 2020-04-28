@@ -11,11 +11,11 @@ const SteamInfo = (props) => {
 
   return (
     <CardBody className="d-flex flex-column text-center text-light bg-dark border rounded shadow mx-2 my-2">
-      <CardSubtitle className="mx-auto mt-auto">SteamID: <b>{props.value.steamID}</b></CardSubtitle>
-      <Button className="mb-auto mx-auto mt-1 text-light border rounded" onClick={toggle} color="transparent">View Details</Button>
+      <CardSubtitle className="mx-auto mt-auto textshadows">SteamID: <b>{props.value.steamID}</b></CardSubtitle>
+      <Button className="mb-auto mx-auto mt-1 text-light border rounded shadow" onClick={toggle} color="transparent">View Details</Button>
       <Collapse className="mb-auto mt-2" isOpen={isOpen}>
         {!props.value.steamInfo ? null :
-          <Card className="bg-dark border rounded cardHeight">
+          <Card className="bg-dark border rounded cardHeight shadow">
             <CardBody>
               <CardTitle><b>{props.value.steamInfo.personaname}</b></CardTitle>
             </CardBody>
