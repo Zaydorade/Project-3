@@ -128,33 +128,28 @@ router.route('/:username')
                     .catch(err => res.json(err))
                     .catch((error) => res.json(error));
             }
-            else {
-                // Check that password match
-                if (req.body.password !== req.body.password2) {
-                    errors.push('Passwords must match!')
-                };
-                // Check password length
-                if (req.body.password.length < 6) {
-                    errors.push('Password must contain at least 6 characters')
-                }; if (errors.length > 0) {
-                    res.json({
-                        errors
-                    });
-                }
-                else {
-                    // Password encryption
-                    bcrypt.genSalt(10, function (err, salt) {
-                        bcrypt.hash(req.body.password, salt, function (err, hash) {
-                            if (err) throw err;
-                            // Update and use the hash as the password
-                            db.Users.findOneAndUpdate({username: req.user.username} , {password: hash}, {useFindAndModify: false})
-                                .then(user => res.json(user))
-                                .catch(err => res.json(err))
-                                .catch((error) => res.json(error))
-                        })
-                    })
-                }
+            // Check that password match
+            else if (req.body.password !== req.body.password2) {
+                res.json({ err: 'Passwords must match!' })
             }
+            // Check password length
+            else if (req.body.password.length < 6) {
+                res.json({ err: 'Password must contain at least 6 characters' })
+            }
+            else {
+                // Password encryption
+                bcrypt.genSalt(10, function (err, salt) {
+                    bcrypt.hash(req.body.password, salt, function (err, hash) {
+                        if (err) throw err;
+                        // Update and use the hash as the password
+                        db.Users.findOneAndUpdate({ username: req.user.username }, { password: hash }, { useFindAndModify: false })
+                            .then(user => res.json(user))
+                            .catch(err => res.json(err))
+                            .catch((error) => res.json(error))
+                    })
+                })
+            }
+
         } else {
             db.Users.findOne({ username: req.user.username })
                 .then((user) => {
