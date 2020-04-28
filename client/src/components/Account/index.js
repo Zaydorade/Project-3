@@ -32,8 +32,8 @@ const Account = (props) => {
             </Card>
           </CardGroup>
           <Container fluid className="text-center">
-            <Button className="ml-auto my-3" color="light" onClick={toggle}>Update Password</Button>
-            <Button className="mr-auto my-3" color="danger" onClick={event => props.submitDelete(event)}>Delete Your Account</Button>
+            <Button className="ml-auto mr-1 my-3" color="light" onClick={toggle}>Update Password</Button>
+            <Button className="mr-auto ml-1  my-3" color="danger" onClick={event => props.submitDelete(event)}>Delete Your Account</Button>
             <Modal isOpen={modal} toggle={toggle}>
               <ModalHeader className="text-center" toggle={toggle}>Update Your Password</ModalHeader>
               <ModalBody>

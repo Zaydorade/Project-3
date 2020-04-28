@@ -77,7 +77,7 @@ class App extends Component {
 						<Profile {...props} value={this.state} addFriend={this.addFriendfromProfile} viewProfile={this.viewProfile} />} />
 					<Route exact path="/account" render={(props) =>
 						<Account {...props} handleChange={this.onHandleChange} updateAvatar={this.updateAvatar}
-							imageSelect={this.onImageSelect} value={this.state} updateUser={this.updateUser}
+							imageSelect={this.onImageSelect} value={this.state} updateUser={this.updateUser} updatePassword={this.updatePassword}
 							updateSteam={this.updateSteam} submitDelete={this.deleteUser} updatePSN={this.updatePSN}
 							updateXbox={this.updateXbox} updateRiot={this.updateRiot} updateNin={this.updateNin}
 							handleMultiChange={this.onMultiFormChange} addFriend={this.addFriend} viewProfile={this.viewProfile} />} />

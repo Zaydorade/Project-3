@@ -10,6 +10,8 @@ const About = (props) => {
                 <p>GameNation was created in 2020 as a network to help gamers with similar tastes and styles find each other.
                     It's the best place to make gaming connections!
                 </p>
+                <p>-->Icon made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+</p>
             </Container>
         </Container>
         </div>
