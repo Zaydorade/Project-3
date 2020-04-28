@@ -1,7 +1,7 @@
 {
   "name": "gsn",
   "version": "1.0.0",
-  "description": "gaming social netwok",
+  "description": "GameNation - Social Netowrk for Gamers",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",

@@ -58,9 +58,7 @@ class App extends Component {
 			this.getUser()
 		}
 		else {
-			console.log('mounting')
 			this.getUser()
-			console.log('still mounting')
 			this.getUsers()
 		}
 	}
