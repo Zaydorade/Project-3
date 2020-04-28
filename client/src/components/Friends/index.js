@@ -11,7 +11,7 @@ const Friends = (props) => {
         <div><Row className="border rounded bg-light shadow mx-5 mt-2"><h1 className="textshadow mx-auto">Friends</h1></Row>
             <Row className="border shadow rounded bg-light mx-5 mt-3 pb-5">
                 {props.value.friends.map(user => {
-                    if (window.location.href.match(/profile/)) {
+                    if (!window.location.href.match(/profile/)) {
                         return <div key={user._id} className="col-lg-3 my-4">
                             <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-5 cardHeight shadow">
                                 <CardImg top className="border rounded shadow" width="100%" src={user.avatar} alt="Profile Picture" />
@@ -28,7 +28,7 @@ const Friends = (props) => {
                         </div>
                     } else {
                        return <div key={user._id} className="col-lg-3 my-4">
-                            <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-5 cardHeight shadow">
+                            <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-5 cardHeightmax shadow">
                                 <CardImg top className="border rounded shadow" width="100%" src={user.avatar} alt="Profile Picture" />
                                 <CardBody className="d-flex flex-column text-center">
                                     <CardSubtitle className="mb-1 mt-auto"><b>{user.username}</b></CardSubtitle>

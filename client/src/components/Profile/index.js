@@ -16,7 +16,7 @@ const Profile = (props) => {
   return (
     <div className="medpurp spacer">
       <CardGroup className="mb-3">
-        <UserCard value={props.value.userProfile} addFriend={props.addFriend} />
+        <UserCard value={props.value} addFriend={props.addFriend} />
         <Card className="mx-1 mt-1 shadow">
           {props.value.userProfile.steamID &&
             <SteamInfo value={props.value.userProfile} />}
