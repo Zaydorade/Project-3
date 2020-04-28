@@ -6,6 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavLink,
+  NavbarText
 } from 'reactstrap';
 
 const GsnNavbar = (props) => {
@@ -13,11 +14,11 @@ const GsnNavbar = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-
   return (
     <div>
       <Navbar className="shadow" color="dark" dark expand="md">
         <NavbarBrand className="logoshadow" href="/"><span className="logo">GameNation</span></NavbarBrand>
+        <NavbarText className="textshadow text-secondary">Connect with other gamers</NavbarText>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           {props.username ?
