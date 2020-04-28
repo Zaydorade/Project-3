@@ -146,17 +146,15 @@ router.route('/:username')
                     bcrypt.genSalt(10, function (err, salt) {
                         bcrypt.hash(req.body.password, salt, function (err, hash) {
                             if (err) throw err;
-                            // Post to the Users table and use the hash as the password
-                            db.Users.create({
-                                username: req.user.username,
-                                password: hash
-                            })
+                            // Update and use the hash as the password
+                            db.Users.findOneAndUpdate({username: req.user.username} , {password: hash}, {useFindAndModify: false})
                                 .then(user => res.json(user))
                                 .catch(err => res.json(err))
+                                .catch((error) => res.json(error))
                         })
                     })
                 }
-                }
+            }
         } else {
             db.Users.findOne({ username: req.user.username })
                 .then((user) => {

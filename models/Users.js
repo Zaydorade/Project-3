@@ -21,14 +21,16 @@ const UserSchema = new Schema({
         type: String
     },
     platforms: {
-        type: Array
+        type: Array,
+        defualt: ["Mobile"]
     },
     avatar: {
         type: String,
         default: "/images/profilepic.jpg"
     },
     region: {
-        type: String
+        type: String,
+        default: "Americas"
     },
     micUser: {
         type: String
