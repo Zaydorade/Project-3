@@ -45,9 +45,7 @@ const Profile = (props) => {
       {!props.value.userProfile.friends ? null :
       props.value.userProfile.friends.length > 0 ?
             <Friends value={props.value.userProfile} viewProfile={props.viewProfile} addFriend={props.addFriend} /> :
-            <Container className='text-center mx-auto py-2 my-3 border bg-light rounded shadow'>
-            <h1>No friends to display.</h1>
-          </Container> }
+            <Row className="border rounded bg-light shadow mx-5 mt-2"><h1 className="textshadow mx-auto">Friends</h1></Row> }
     </div>
   );
 }

@@ -17,7 +17,7 @@ const BrowseBar = (props) => {
 
   return (
     <Navbar className="shadow" color="secondary" light expand="md">
-      <NavbarToggler onClick={toggle} />
+      <NavbarToggler className="shadow" onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <UncontrolledDropdown nav inNavbar>

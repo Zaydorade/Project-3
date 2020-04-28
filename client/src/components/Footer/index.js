@@ -15,7 +15,7 @@ const Account = (props) => {
         <NavbarBrand className="textshadows" href="/about">About</NavbarBrand>
         <NavbarText className="mr-2 textshadows">Support</NavbarText>
         <NavbarText className="mr-auto textshadows">Feedback</NavbarText>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler className="shadow" onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto text-center" navbar>
             <NavbarText className="mx-1 textshadows">Terms of Service</NavbarText>
