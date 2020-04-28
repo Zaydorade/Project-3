@@ -17,8 +17,8 @@ const GsnNavbar = (props) => {
   return (
     <div>
       <Navbar className="shadow" color="dark" dark expand="md">
-        <NavbarBrand className="logoshadows mr-auto" href="/"><span className="logo">GameNation</span></NavbarBrand>
-        <NavbarText className="textshadow text-secondary">Connect with other gamers</NavbarText>
+        <NavbarBrand className="logoshadow" href="/"><span className="logo">GameNation</span></NavbarBrand>
+        <NavbarText className="textshadows mr-auto text-secondary">Connect with other gamers</NavbarText>
         <NavbarToggler className="shadow" onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           {props.username ?
