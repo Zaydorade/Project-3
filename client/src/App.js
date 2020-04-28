@@ -72,7 +72,7 @@ class App extends Component {
 					<Route exact path='/' render={(props) =>
 						<Browse {...props} value={this.state} handleDropdown={this.onHandleDropdown}
 							handleChange={this.onHandleChange} viewProfile={this.viewProfile} addFriend={this.addFriend} />} />
-					<Route path="/profile/" render={(props) =>
+					<Route path="/profile" render={(props) =>
 						<Profile {...props} value={this.state} addFriend={this.addFriendfromProfile} viewProfile={this.viewProfile} />} />
 					<Route exact path="/account" render={(props) =>
 						<Account {...props} handleChange={this.onHandleChange} updateAvatar={this.updateAvatar}
@@ -182,7 +182,7 @@ class App extends Component {
 	viewProfile = (user) => {
 		localStorage.clear();
 		localStorage.setItem("currentprofile", user)
-		window.location = '/profile/' + user
+		window.location = '/profile'
 	}
 	
 	login = () => {
