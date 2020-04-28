@@ -7,12 +7,13 @@ import UserInfoCard from '../UserInfoCard';
 
 
 const UserCard = (props) => {
+  console.log(props.value.userProfile)
   if (!props.value.username) {
     return (<Card className="mx-1 mt-1 shadow">
       <CardImg top className="border rounded shadow" width="100%" src={props.value.userProfile.avatar} alt="Profile Picture" />
       <CardBody className='text-center border rounded shadow my-2 mx-2'>
         <CardTitle className="textshadows"><b>{props.value.userProfile.username}</b></CardTitle>
-        <CardSubtitle>-{props.value.userProfile.platforms.map((platform, index) => { return <span key={index}>{platform} - </span> })}
+        <CardSubtitle>-{props.value.platforms.map(platform => { return <span>{platform} - </span> })}
         </CardSubtitle>
         <CardText>{props.value.userProfile.bio}</CardText>
       </CardBody>
@@ -23,7 +24,7 @@ const UserCard = (props) => {
       <CardImg top className="border rounded shadow" width="100%" src={props.value.userProfile.avatar} alt="Profile Picture" />
       <CardBody className='text-center border rounded shadow my-2 mx-2'>
         <CardTitle className="textshadows"><b>{props.value.userProfile.username}</b></CardTitle>
-        <CardSubtitle>-{props.value.userProfile.platforms.map((platform, index) => { return <span key={index}>{platform} - </span> })}
+        <CardSubtitle>-{props.value.platforms.map(platform => { return <span>{platform} - </span> })}
         </CardSubtitle>
         <CardText>{props.value.userProfile.bio}</CardText>
       </CardBody>
