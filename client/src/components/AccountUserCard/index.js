@@ -15,7 +15,7 @@ const AccountUserCard = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
-    <Card className="mx-1 mt-1 shadow">
+    <Card className="rounded mx-1 mt-1 shadow">
       <CardImg className="border rounded shadow" top width="100%" src={props.value.avatar} alt="Profile Picture" />
       <ImageUpload value={props.value} imageSelect={props.imageSelect} updateAvatar={props.updateAvatar} />
       <CardBody className="text-center bg-light border rounded shadow my-2 mx-2">

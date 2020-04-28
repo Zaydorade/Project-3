@@ -396,8 +396,8 @@ class App extends Component {
 	}
 
 	updatePassword = () => {
-		const { password, password2 } = this.state
-		const object = {password, password2}
+		const { username, password, password2 } = this.state
+		const object = {username, password, password2}
 		UserAPI.updateUser(object)
 		.then((res) => {
 			window.location.reload()
