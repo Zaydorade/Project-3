@@ -21,7 +21,7 @@ router.route('/games').get((req, res) => {
 
 router.route('/').post((req, res) => {
     let userSteamID = req.body.steamID
-    let APIkey = 'BD54D1AE4184BBA8B7ECF21F6094F4CE'
+    let APIkey = process.env.STEAM_KEY
     let steamAPIurl = `http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${APIkey}&steamids=${userSteamID}`
     axios.get(steamAPIurl)
         .then((response) =>
