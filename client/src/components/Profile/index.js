@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  CardGroup, Card, CardBody, CardSubtitle, Container
+  CardGroup, Card, CardBody, CardSubtitle, Row
 } from 'reactstrap';
 import UserCard from '../UserCard';
 import XboxInfo from '../XboxInfo';
