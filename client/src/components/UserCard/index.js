@@ -17,11 +17,6 @@ const UserCard = (props) => {
         <CardText>{props.value.userProfile.bio}</CardText>
       </CardBody>
       <UserInfoCard value={props.value} />
-      {props.value.userProfile.username !== props.value.username ?
-        <Container className="py-2 text-center">
-          <Button className="mb-2 mx-auto border rounded shadow" color="transparent"
-            name={props.value.userProfile.username} onClick={event => props.addFriend(event)}>Add</Button>
-        </Container> : null}
     </Card>)
   } else {
     return (<Card className="mx-1 mt-1 shadow">
@@ -33,6 +28,11 @@ const UserCard = (props) => {
         <CardText>{props.value.userProfile.bio}</CardText>
       </CardBody>
       <UserInfoCard value={props.value} />
+      {props.value.userProfile.username !== props.value.username ?
+        <Container className="py-2 text-center">
+          <Button className="mb-2 mx-auto border rounded shadow" color="transparent"
+            name={props.value.userProfile.username} onClick={event => props.addFriend(event)}>Add</Button>
+        </Container> : null}
     </Card>)
   }
 
