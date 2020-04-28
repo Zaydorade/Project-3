@@ -25,10 +25,11 @@ const Browse = (props) => {
                                             <CardText className="tinywords mb-auto">{user.bio}</CardText>
                                         </CardBody>
                                     </Card>
+                                    {!props.value.username ? null : 
                                     <Container className="py-2 text-center">
                                     <Button key={'add' + user._id} color="transparent" className="border border-dark rounded shadow textshadow"
                                             name={user.username} onClick={event => props.addFriend(event)}>Add</Button>
-                                    </Container>
+                                    </Container>}
                                 </div>
                             } return null
                         } return null
