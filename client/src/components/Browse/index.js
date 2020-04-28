@@ -19,7 +19,7 @@ const Browse = (props) => {
                                 return <div key={user._id} className="col-lg-3 my-4">
                                     <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-3 cardHeight shadow">
                                         <CardImg top className="border rounded shadow" width="100%" src={user.avatar} alt="Profile Picture" />
-                                        <CardBody className="text-center">
+                                        <CardBody className="d-flex flex-column text-center">
                                             <CardSubtitle className="mb-1 mt-auto"><b>{user.username}</b></CardSubtitle>
                                             <CardSubtitle className="smallwords">- {user.platforms.map(platform => {return <span>{platform} - </span>})}</CardSubtitle>
                                             <CardText className="tinywords mb-auto">{user.bio}</CardText>
