@@ -20,7 +20,7 @@ const AccountUserCard = (props) => {
       <ImageUpload value={props.value} imageSelect={props.imageSelect} updateAvatar={props.updateAvatar} />
       <CardBody className="text-center bg-light border rounded shadow my-2 mx-2">
         <CardTitle><b>{props.value.username}</b></CardTitle>
-        <CardSubtitle>-{user.platforms.map(platform => { return <span>{platform} - </span> })}</CardSubtitle>
+        <CardSubtitle>-{props.user.platforms.map(platform => { return <span>{platform} - </span> })}</CardSubtitle>
         <CardText>{props.value.bio}</CardText>
       </CardBody>
       <Modal isOpen={modal} toggle={toggle}>
