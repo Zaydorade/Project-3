@@ -24,7 +24,7 @@ const BrowseBar = (props) => {
             <DropdownToggle className="text-light textshadows" nav caret >
               Region
               </DropdownToggle>
-            <DropdownMenu className="bg-dark px-2"  >
+            <DropdownMenu className="bg-dark px-2 border rounded border-dark"  >
               <DropdownItem className={props.value.regionSearch.includes('Americas') ?
                 "active text-center mb-1 text-dark bg-light border rounded" :
                 "text-center mb-1 text-light border rounded"}
@@ -53,7 +53,7 @@ const BrowseBar = (props) => {
             <DropdownToggle className="text-light textshadows" nav caret>
               Platforms
               </DropdownToggle>
-            <DropdownMenu className="bg-dark px-2" right>
+            <DropdownMenu className="bg-dark px-2 border rounded border-dark" right>
               <DropdownItem className={props.value.platformSearch.includes('PC') ?
                 "active text-center mb-1 text-dark bg-light border rounded" :
                 "text-center mb-1 text-light border rounded"}
@@ -96,7 +96,7 @@ const BrowseBar = (props) => {
             <DropdownToggle className="text-light textshadows" nav caret>
               Style
               </DropdownToggle>
-            <DropdownMenu className="bg-dark px-2" right>
+            <DropdownMenu className="bg-dark px-2 border rounded border-dark" right>
               <DropdownItem className={props.value.styleSearch.includes('Social') ?
                 "active text-center mb-1 text-dark bg-light border rounded" :
                 "text-center mb-1 text-light border rounded"}

@@ -118,16 +118,45 @@ router.route('/:username')
 
 router.route('/:username')
     .post((req, res) => {
-        console.log(`Updating ${req.params.username}`)
-        console.log(req.body.newFriend)
         if (!req.body.newFriend) {
-            db.Users
-                .findOneAndUpdate({ username: req.user.username }, req.body, { useFindAndModify: false })
-                .then((user) => {
-                    res.json(user)
-                })
-                .catch(err => res.json(err))
-                .catch((error) => res.json(error));
+            if (!req.body.password) {
+                db.Users
+                    .findOneAndUpdate({ username: req.user.username }, req.body, { useFindAndModify: false })
+                    .then((user) => {
+                        res.json(user)
+                    })
+                    .catch(err => res.json(err))
+                    .catch((error) => res.json(error));
+            }
+            else {
+                // Check that password match
+                if (req.body.password !== req.body.password2) {
+                    errors.push('Passwords must match!')
+                };
+                // Check password length
+                if (req.body.password.length < 6) {
+                    errors.push('Password must contain at least 6 characters')
+                }; if (errors.length > 0) {
+                    res.json({
+                        errors
+                    });
+                }
+                else {
+                    // Password encryption
+                    bcrypt.genSalt(10, function (err, salt) {
+                        bcrypt.hash(req.body.password, salt, function (err, hash) {
+                            if (err) throw err;
+                            // Post to the Users table and use the hash as the password
+                            db.Users.create({
+                                username: req.user.username,
+                                password: hash
+                            })
+                                .then(user => res.json(user))
+                                .catch(err => res.json(err))
+                        })
+                    })
+                }
+                }
         } else {
             db.Users.findOne({ username: req.user.username })
                 .then((user) => {
@@ -137,7 +166,6 @@ router.route('/:username')
                         if (Object.values(currentFriend).includes(req.body.newFriend)) {
                             console.log(`Removing ${req.body.newFriend} from ${req.user.username}s friend list`)
                             checkThisFriend = true
-                            console.log(checkThisFriend)
                         } else console.log('no match')
 
                     }

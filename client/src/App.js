@@ -320,7 +320,7 @@ class App extends Component {
 			.then((res) => {
 				console.log(res.data)
 				this.getSteamInfo()
-				// window.location.reload()
+				window.location.reload()
 			})
 			.catch((err) => console.log(err));
 	};
@@ -376,7 +376,6 @@ class App extends Component {
 	};
 
 	updateUser = () => {
-		console.log(this.state)
 		const { username, bio, region, micUser, style, availability, platform, platforms } = this.state
 		const object = {
 			username,
@@ -391,10 +390,20 @@ class App extends Component {
 		console.log(object)
 		UserAPI.updateUser(object)
 			.then((res) => {
-				console.log(res.data.username)
 				window.location.reload()
 			})
 			.catch((err) => console.log(err));
+	}
+
+	updatePassword = () => {
+		const { password, password2 } = this.state
+		const object = {password, password2}
+		UserAPI.updateUser(object)
+		.then((res) => {
+			window.location.reload()
+			console.log(res)
+		})
+		.catch((err) => console.log(err))
 	}
 
 	getSteamInfo = () => {
