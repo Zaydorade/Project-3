@@ -29,7 +29,7 @@ const Browse = (props) => {
                                     </div>
                                 } else {
                                     return <div key={user._id} className="col-lg-3 my-4">
-                                        <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-3 cardHeight shadow">
+                                        <Card tag='a' onClick={() => props.viewProfile(user.username)} className="mx-3 cardHeightmax shadow">
                                             <CardImg top className="border rounded shadow" width="100%" src={user.avatar} alt="Profile Picture" />
                                             <CardBody className="d-flex flex-column text-center">
                                                 <CardSubtitle className="mb-1 mt-auto"><b>{user.username}</b></CardSubtitle>

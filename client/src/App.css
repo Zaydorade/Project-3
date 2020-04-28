@@ -1,5 +1,6 @@
 .footer {
-  position: relative;
+  width: 100%;
+  position: absolute;
   bottom: 0;
 }
 
@@ -18,6 +19,11 @@ body, .medpurp {
 .cardHeight {
   height: 90%
 }
+
+.cardHeightmax {
+  height: 100%
+}
+
 
 .textshadows {
   text-shadow: 0px 0px 5px black;
