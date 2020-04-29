@@ -12,7 +12,7 @@ const UserSchema = new Schema({
     },
     accountAge: { 
         type: Date, 
-        default: Date.now 
+        default: Date.now
     },
     bio: {
         type: String

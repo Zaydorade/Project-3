@@ -48,7 +48,6 @@ const Browse = (props) => {
                         } return null
                     } return null
                 }
-
                 )}
             </Row>
         </div>
