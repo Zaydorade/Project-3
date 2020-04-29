@@ -66,7 +66,7 @@ router.route('/')
                 }, {useFindAndModify: false})
                 .then((user) => {
                     console.log(`Update complete, ${user.username}`)
-                    res.json(user)})
+                    res.json({status: "user avatar updated"})})
                 .catch(err => res.json(err))
                 .catch((error) =>res.json(error))                }
         }
