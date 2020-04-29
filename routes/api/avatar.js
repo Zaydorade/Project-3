@@ -9,7 +9,7 @@ module.exports = router;
 
 //Set storage engine
 const storage = multer.diskStorage({
-    destination: 'images/',
+    destination: 'client/build/images/',
     filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
