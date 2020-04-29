@@ -184,7 +184,7 @@ class App extends Component {
 		localStorage.setItem("currentprofile", user)
 		window.location = '/profile'
 	}
-	
+
 	login = () => {
 		const { username, password } = this.state;
 		const object = {
@@ -205,14 +205,14 @@ class App extends Component {
 
 	logout = () => {
 		UserAPI.logout()
-		.then(res => {
-			console.log("logged out");
-			this.setState({
-				userLoggedIn: false
+			.then(res => {
+				console.log("logged out");
+				this.setState({
+					userLoggedIn: false
+				})
+				window.location.reload()
 			})
-			window.location.reload()
-		})
-		.catch(err => console.log(err))
+			.catch(err => console.log(err))
 	}
 
 	//create User Function
@@ -267,15 +267,13 @@ class App extends Component {
 			.catch((err) => console.log(err));
 	};
 
-	updateAvatar = (event) => {
+	updateAvatar = () => {
 		UserAPI.updateAvatar()
-			.then(res => {
+			.then((res) => {
 				window.location = res.data.redirectURL
-
-			}
-			)
+			})
 			.catch(err => console.log(err))
-	}
+	};
 
 	updatePSN = () => {
 		console.log(this.state)
@@ -397,13 +395,13 @@ class App extends Component {
 
 	updatePassword = () => {
 		const { username, password, password2 } = this.state
-		const object = {username, password, password2}
+		const object = { username, password, password2 }
 		UserAPI.updateUser(object)
-		.then((res) => {
-			window.location.reload()
-			console.log(res)
-		})
-		.catch((err) => console.log(err))
+			.then((res) => {
+				window.location.reload()
+				console.log(res)
+			})
+			.catch((err) => console.log(err))
 	}
 
 	getSteamInfo = () => {
@@ -413,20 +411,20 @@ class App extends Component {
 			steamID
 		}
 		UserAPI.getSteam(object)
-		.then((res) => {
-			console.log('Steam info Updated')
-			console.log(this.state)
-			console.log(res)
-			// this.updateSteamAvatar()
-			// console.log('steam avatar updated')
-		})
-		.catch(err => console.log(err))
+			.then((res) => {
+				console.log('Steam info Updated')
+				console.log(this.state)
+				console.log(res)
+				// this.updateSteamAvatar()
+				// console.log('steam avatar updated')
+			})
+			.catch(err => console.log(err))
 	}
 
 	updateSteamAvatar = () => {
 		UserAPI.updateSteamAvatar()
-		.then(res => console.log(res.data))
-		.catch(err => console.log(err))
+			.then(res => console.log(res.data))
+			.catch(err => console.log(err))
 	}
 
 	addFriend = (event) => {

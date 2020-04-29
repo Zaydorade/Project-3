@@ -50,7 +50,6 @@ router.route('/')
     console.log(req.user.username)
     const currentUser = req.user.username
     upload(req, res, (err) => {
-        console.log(req.body)
         if (err) {
             console.log(err)
             res.json(err)
@@ -65,10 +64,10 @@ router.route('/')
                     avatar : "/images/" + req.file.filename
                 }, {useFindAndModify: false})
                 .then((user) => {
-                    console.log(`Update complete, ${user.username}`)
+                    console.log(`Avatar update complete, ${user.username}`)
                     res.json({redirectURL: '/account'})})
                 .catch(err => res.json(err))
-                .catch((error) =>res.json(error))                }
+                .catch((error) =>res.json(error))}
         }
     })
 })
