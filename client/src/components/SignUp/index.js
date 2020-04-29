@@ -31,7 +31,7 @@ const CreateUser = (props) => {
             <Label for="platform">Select your Primary Platform:</Label>
             <Input className="shadow-sm" type="select" name="platform"
               onChange={props.handleChange}
-              value={props.value.platform}>
+              value={!props.value.platform ? "PC" : props.value.platform}>
               <option>PC</option>
               <option>Xbox</option>
               <option>Playstation</option>
@@ -60,7 +60,7 @@ const CreateUser = (props) => {
             <Label for="region">Region:</Label>
             <Input className="shadow-sm" type="select" name="region"
               onChange={props.handleChange}
-              value={props.value.region}>
+              value={!props.value.region ? "Americas" : props.value.region}>
               <option>Americas</option>
               <option>Europe/Asia</option>
               <option>Oceania</option>
@@ -70,7 +70,7 @@ const CreateUser = (props) => {
             <Label for="availability">Gaming Schedule:</Label>
             <Input className="shadow-sm" type="select" name="availability"
               onChange={props.handleChange}
-              value={props.value.availability}>
+              value={!props.value.availability ? "1 hr/wk" : props.value.availability}>
               <option>1 hr/wk</option>
               <option>5 hrs/wk</option>
               <option>10 hrs/wk</option>
@@ -83,7 +83,7 @@ const CreateUser = (props) => {
             <Label for="style">Gaming Style:</Label>
             <Input className="shadow-sm" type="select" name="style"
               onChange={props.handleChange}
-              value={props.value.style}>
+              value={!props.value.style ? "Social" : props.value.style}>
               <option>Social</option>
               <option>Competitive</option>
               <option>Casual</option>
@@ -93,7 +93,7 @@ const CreateUser = (props) => {
             <Label for="micUser">Are you a mic user?</Label>
             <Input className="shadow-sm" type="select" name="micUser"
               onChange={props.handleChange}
-              value={props.value.micUser}>
+              value={!props.value.micUser ? "Yes" : props.value.micUser}>
               <option>Yes</option>
               <option>No I'm shy</option>
             </Input>
@@ -108,7 +108,7 @@ const CreateUser = (props) => {
             <Label for="riotID" className="mr-sm-2">League of Legends/Valorant Username:</Label>
             <Input className="shadow-sm" type="text" name="riotID" placeholder="Enter your Riot ID"
               onChange={props.handleChange}
-              value={!props.value.riotID ? "THIS IS A DEFAULT" : props.value.riotID} />
+              value={props.value.riotID} />
           </FormGroup>
           <FormGroup className="mb-2 mr-sm-2">
             <Label for="xboxgt" className="mr-sm-2">Xbox Live Gamertag:</Label>
