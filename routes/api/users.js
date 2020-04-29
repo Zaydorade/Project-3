@@ -93,7 +93,7 @@ router.route('/').post((req, res) => {
                         db.Users.create({
                             username: req.body.username,
                             password: hash,
-                            platform: platform,
+                            platform: newplatform,
                             bio: req.body.bio,
                             region: newRegion,
                             availability: req.body.availability,
