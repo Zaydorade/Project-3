@@ -22,7 +22,7 @@ const UserSchema = new Schema({
     },
     platforms: {
         type: Array,
-        defualt: ["Mobile"]
+        default: ["Mobile"]
     },
     avatar: {
         type: String,

@@ -271,6 +271,7 @@ class App extends Component {
 		UserAPI.updateAvatar()
 			.then(res => {
 				console.log(res)
+				window.location.reload()
 			}
 			)
 			.catch(err => console.log(err))

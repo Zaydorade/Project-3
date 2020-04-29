@@ -31,7 +31,7 @@ const CreateUser = (props) => {
             <Label for="platform">Select your Primary Platform:</Label>
             <Input className="shadow-sm" type="select" name="platform"
               onChange={props.handleChange}
-              value={props.value.platform} defaultValue={"PC"}>
+              value={props.value.platform}>
               <option>PC</option>
               <option>Xbox</option>
               <option>Playstation</option>
@@ -60,7 +60,7 @@ const CreateUser = (props) => {
             <Label for="region">Region:</Label>
             <Input className="shadow-sm" type="select" name="region"
               onChange={props.handleChange}
-              value={props.value.region} defaultValue={"Americas"}>
+              value={props.value.region}>
               <option>Americas</option>
               <option>Europe/Asia</option>
               <option>Oceania</option>
@@ -70,7 +70,7 @@ const CreateUser = (props) => {
             <Label for="availability">Gaming Schedule:</Label>
             <Input className="shadow-sm" type="select" name="availability"
               onChange={props.handleChange}
-              value={props.value.availability} defaultValue={"1 hr/wk"}>
+              value={props.value.availability}>
               <option>1 hr/wk</option>
               <option>5 hrs/wk</option>
               <option>10 hrs/wk</option>
@@ -93,7 +93,7 @@ const CreateUser = (props) => {
             <Label for="micUser">Are you a mic user?</Label>
             <Input className="shadow-sm" type="select" name="micUser"
               onChange={props.handleChange}
-              value={props.value.micUser} defaultValue={"Yes"}>
+              value={props.value.micUser}>
               <option>Yes</option>
               <option>No I'm shy</option>
             </Input>
