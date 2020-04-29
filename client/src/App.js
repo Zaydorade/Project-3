@@ -270,8 +270,8 @@ class App extends Component {
 	updateAvatar = (event) => {
 		UserAPI.updateAvatar()
 			.then(res => {
-				console.log("User Avatar Updated")
-				window.location = "../../account"
+				window.location = res.data.redirectURL
+
 			}
 			)
 			.catch(err => console.log(err))

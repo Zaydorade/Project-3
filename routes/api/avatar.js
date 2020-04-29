@@ -66,8 +66,8 @@ router.route('/')
                 }, {useFindAndModify: false})
                 .then((user) => {
                     console.log(`Update complete, ${user.username}`)
-                    res.json({status: "user avatar updated"})})
-                    window.location = "../../account"
+                    res.json({redirectURL: '/account'})})
+                    window.location = "/account"
                 .catch(err => res.json(err))
                 .catch((error) =>res.json(error))                }
         }
