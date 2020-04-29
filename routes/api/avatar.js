@@ -65,7 +65,7 @@ router.route('/')
                 }, {useFindAndModify: false})
                 .then((user) => {
                     console.log(`Avatar update complete, ${user.username}`)
-                    res.json({redirectURL: '/account'})})
+                    res.redirect('/account')})
                 .catch(err => res.json(err))
                 .catch((error) =>res.json(error))}
         }
