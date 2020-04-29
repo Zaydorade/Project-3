@@ -4,9 +4,9 @@
 
 #### By Zayd Sarraj
 
-## Link to Wireframe
+## Link to App
 
-- https://www.figma.com/file/dU69KorTKppjqoxN31vH7W/Homepage?node-id=0%3A1
+- https://gamenationapp.herokuapp.com/
 
 ## Description
 
@@ -15,6 +15,10 @@
 ## Features
 ​
 * Users can create profiles, link their gaming accounts from Xbox, Steam, or Playstation and make friends with other gamers
+
+## Link to Wireframe
+
+- https://www.figma.com/file/dU69KorTKppjqoxN31vH7W/Homepage?node-id=0%3A1
 
 ## Technologies Used
 
