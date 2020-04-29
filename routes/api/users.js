@@ -42,6 +42,7 @@ router.route('/user').get((req, res) => {
 // Post route - create new user
 router.route('/').post((req, res) => {
     let errors = [];
+    const { region, style, platform } = req.body
 
     if (!req.body.username || !req.body.password || !req.body.password2) {
         errors.push('Please fill in Username and Password fields')
@@ -78,24 +79,24 @@ router.route('/').post((req, res) => {
                     bcrypt.hash(req.body.password, salt, function (err, hash) {
                         if (err) throw err;
                         if (req.body.region === "") {
-                            req.body.region = "Americas"
-                        }
+                            region = "Americas"
+                        } 
                         if (req.body.platform === "") {
-                            req.body.platform = "PC"
-                        }
+                            platform = "PC"
+                        } 
                         if (req.body.style === "") {
-                            req.body.style = "Social"
+                            style = "Social"
                         }
                         // Post to the Users table and use the hash as the password
                         db.Users.create({
                             username: req.body.username,
                             password: hash,
-                            platform: req.body.platform,
+                            platform: platform,
                             bio: req.body.bio,
-                            region: req.body.region,
+                            region: region,
                             availability: req.body.availability,
                             micUser: req.body.micUser,
-                            style: req.body.style,
+                            style: style,
                             steamID: req.body.steamID,
                             xboxgt: req.body.xboxgt,
                             riotID: req.body.riotID,
