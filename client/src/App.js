@@ -271,7 +271,7 @@ class App extends Component {
 		UserAPI.updateAvatar()
 			.then(res => {
 				console.log("User Avatar Updated")
-				window.location = "../account"
+				window.location = "../../account"
 			}
 			)
 			.catch(err => console.log(err))
