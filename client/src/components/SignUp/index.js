@@ -108,7 +108,7 @@ const CreateUser = (props) => {
             <Label for="riotID" className="mr-sm-2">League of Legends/Valorant Username:</Label>
             <Input className="shadow-sm" type="text" name="riotID" placeholder="Enter your Riot ID"
               onChange={props.handleChange}
-              value={props.value.riotID} />
+              value={!props.value.riotID ? "THIS IS A DEFAULT" : props.value.riotID} />
           </FormGroup>
           <FormGroup className="mb-2 mr-sm-2">
             <Label for="xboxgt" className="mr-sm-2">Xbox Live Gamertag:</Label>
