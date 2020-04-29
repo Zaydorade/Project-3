@@ -80,6 +80,15 @@ router.route('/').post((req, res) => {
                     // This uses that 'salt' and creates a hashed password
                     bcrypt.hash(req.body.password, salt, function (err, hash) {
                         if (err) throw err;
+                        if (req.body.region === "") {
+                            newRegion = "Americas"
+                        };
+                        if (req.body.platform === "") {
+                            newPlatform = "PC"
+                        };
+                        if (req.body.style === "") {
+                            newStyle = "Social"
+                        };
                         // Post to the Users table and use the hash as the password
                         db.Users.create({
                             username: req.body.username,
