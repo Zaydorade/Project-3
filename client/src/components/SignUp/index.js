@@ -5,7 +5,7 @@ const CreateUser = (props) => {
 
   return (
     <div className="pt-5 spacer purple">
-      <Container className='border rounded bg-light shadow'>
+      <Container className='border rounded bg-light shadow mb-3'>
         <h1 className='text-center mt-2'>Sign Up</h1>
         <Form>
           <FormGroup className="mb-2 mr-sm-2">
