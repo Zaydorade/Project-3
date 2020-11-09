@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const db = require('../models');
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.DB_URI || 'mongodb://localhost/gsn', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gsn', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 });
@@ -86,8 +86,7 @@ db.Users
 	.deleteMany({})
 	.then(() => db.Users.collection.insertMany(itemSeed))
 	.then((data) => {
-		console.log(data.result.n+ ' records inserted!');
-		console.log(data)
+		console.log(data.insertedIds.length + ' records inserted!');
 		process.exit(0);
 	})
 	.catch((err) => {
