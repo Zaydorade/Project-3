@@ -9,7 +9,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://GameAdmin:blastoise1@ds259001.mlab.com:59001/heroku_btvxcx88'; 
+const MONGODB_URI = process.env.DB_URI || 'mongodb://GameAdmin:blastoise1@ds259001.mlab.com:59001/heroku_btvxcx88'; 
 
 
 app.use(express.urlencoded({ limit: '10mb', extended: true, parameterLimit: 1000000 })); // Body Parser
