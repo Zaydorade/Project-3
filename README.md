@@ -31,8 +31,6 @@
 
 * React.js
 
-* Heroku.js
-
 * Express
 
 * Node.js
@@ -43,3 +41,6 @@
 
 * CSS
 
+* Heroku
+
+* Internal API
