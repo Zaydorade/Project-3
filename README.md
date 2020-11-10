@@ -14,7 +14,9 @@
 
 ## Features
 
-* Users can create profiles, link their gaming accounts from Xbox, Steam, or Playstation and make friends with other gamers
+* Users can create profiles displaying their gaming style and interests
+* Profiles include sections for Xbox, Playstation, Nintendo, PC accounts to simplify the process of adding friends across multiple platforms
+* Users can browse profiles to find users of similar interests and add one another as friends to be displayed on their user profile
 ## Known Bugs
 * Avatar images of new users will not persist through heroku dyno restarts (the default image can be used indefinitely)
 ​
